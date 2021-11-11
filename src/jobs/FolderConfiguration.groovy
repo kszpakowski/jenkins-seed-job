@@ -1,5 +1,9 @@
 import scripts.Config
 
+def config = readYaml (file: configFilePath)
+
+println config
+/*
 Config.fromFile('config.yaml').process(
     { folderConf ->
         folder(folderConf.name) {
@@ -21,3 +25,4 @@ Config.fromFile('config.yaml').process(
         }
     }
 )
+*/
