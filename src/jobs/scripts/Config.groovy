@@ -13,6 +13,7 @@ class Config{
             if(it.projects){
                 it.projects.each {
                     def project = new Project(folder, it.name, it.defaultBranch)
+                    projectCallback(project)
                 }
             }
         }
