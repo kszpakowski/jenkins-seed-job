@@ -1,0 +1,19 @@
+---
+folders:
+- name: TeamA
+  securityGroups: 
+  - TEAM-A-DEVELOPER
+  - TEAM-A-ADMINISTRATOR
+  projects:
+  - name: first-project
+    defaultBranch: main
+  - name: second-project
+- name: TeamB
+  securityGroups: 
+  - TEAM-B-DEVELOPER
+  - TEAM-B-ADMINISTRATOR
+  folders:
+  - name: configurations
+    projects:
+    - name: app-a-configuration
+    - name: app-b-configuration
