@@ -1,13 +1,6 @@
 import scripts.Config
-import groovy.yaml.YamlSlurper
 
-//todo move config file parsing to Config class .fromFile(String file) factory method
-def configFile = new File("config.yml")
-
-configFile.withReader { reader ->
-    def config = new YamlSlurper().parse(reader)
-
-    Config.process(config, 
+Config.fromFile('config.yaml').process(
     { folderConf ->
         folder(folderConf.name) {
             properties {
@@ -26,5 +19,5 @@ configFile.withReader { reader ->
 
             }
         }
-    })
-}
+    }
+)
