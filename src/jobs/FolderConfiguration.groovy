@@ -1,6 +1,6 @@
 import scripts.Config
 
-def config = readYaml (file: configFilePath)
+def config = readYaml (file: 'config.yaml')
 
 println config
 /*
