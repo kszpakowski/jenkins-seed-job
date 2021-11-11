@@ -14,7 +14,7 @@ Config.process(config,
         }
     },
     { projectConf ->
-        folder(projectConf.fullName) {
+        folder(projectConf.fullName()) {
             properties {
 
             }
