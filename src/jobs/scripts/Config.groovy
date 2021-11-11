@@ -3,7 +3,7 @@ package scripts
 class Config{
 
     public static void process(def config, def Closure folderCallback, def Closure projectCallback){
-        processConfig(config, folderCallback, projectCallback)
+        processConfig(config, '', folderCallback, projectCallback)
     }
 
     private void processConfig(def config, def parentFolder='', def Closure folderCallback, def Closure projectCallback){
