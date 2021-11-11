@@ -1,7 +1,7 @@
 import scripts.Config
 
 Config.process(config, {}, { projectConf ->
-    pipelineJob("${projectConf.fullName()}/verify"){
+    pipelineJob("${projectConf.fullName()}/postMR"){
         
     }
 })
