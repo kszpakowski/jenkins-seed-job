@@ -4,7 +4,7 @@ Config.process(config, {}, { projectConf ->
     if(projectConf.generateTestAutomationJobs) {
         pipelineJob("${projectConf.fullName()}/performanceTest"){
             parameters {
-                choiceParam('Environment',['Dev','Test'])
+                choiceParam('Environment_param',['Dev','Test'])
             }
             definition {
                 cps {
@@ -16,8 +16,8 @@ pipeline {
         stage('Run performance tests') {
             steps {
                 script {
-                    echo "Runnin performance tests on \${Environment} env."
-                    currentBuild.description="Env: \${Environment}"
+                    echo "Runnin performance tests on \${Environment_param} env."
+                    currentBuild.description="Env: \${Environment_param}"
                 }
             }
         }
