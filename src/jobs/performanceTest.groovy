@@ -13,6 +13,7 @@ pipeline {
         stage('Run performance tests') {
             steps {
                 script {
+                    echo "Runnin performance tests"
                 }
             }
         }

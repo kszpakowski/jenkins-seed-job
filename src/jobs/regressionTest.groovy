@@ -13,6 +13,7 @@ pipeline {
         stage('Run regression tests') {
             steps {
                 script {
+                    echo "Runnin regression tests"
                 }
             }
         }
