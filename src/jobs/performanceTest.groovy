@@ -16,7 +16,8 @@ pipeline {
         stage('Run performance tests') {
             steps {
                 script {
-                    echo "Runnin performance tests"
+                    echo "Runnin performance tests on $ENVIRONMENT env."
+                    currentBuild.description="Env: $ENVIRONMENT"
                 }
             }
         }
