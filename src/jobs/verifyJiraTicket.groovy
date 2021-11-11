@@ -5,21 +5,21 @@ Config.process(config, {}, { projectConf ->
         pipelineJob("${projectConf.fullName()}/verifyJiraTicket"){
             definition {
                 cps {
-                    script('''
-                    pipeline {
-                        agent any
+                    script("""
+pipeline {
+    agent any
 
-                        stages {
-                            stage('Verify Jira Ticket') {
-                                steps {
-                                    script {
-                                        echo "Checking jira ticket. Jira project: ${projectConf.jiraProject}"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    ''')
+    stages {
+        stage('Verify Jira Ticket') {
+            steps {
+                script {
+                    echo "Checking jira ticket. Jira project: ${projectConf.jiraProject}"
+                }
+            }
+        }
+    }
+}
+                    """)
                     sandbox()
                 }
             }
