@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     echo "Checking jira ticket. Jira project: ${projectConf.jiraProject}. Expected status: ${projectConf.expectedIssueStatus}"
-                    currentBuild.description="XXX-123"
+                    currentBuild.description="https://jira.example.com/browse/XXX-123"
                 }
             }
         }
