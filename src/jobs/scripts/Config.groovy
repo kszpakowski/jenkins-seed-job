@@ -1,7 +1,5 @@
 package scripts
 
-import groovy.yaml.YamlSlurper
-
 class Config{
 
     private final def config
@@ -11,11 +9,8 @@ class Config{
     }
 
     public static void fromFile(String configFilePath){
-        def configFile = new File(configFilePath)
-        configFile.withReader { reader ->
-            def config = new YamlSlurper().parse(reader)
-            return new Config(config)
-        }
+        def config = readYaml (file: configFilePath)
+        return new Config(config)
     }
 
     public void process(def parentFolder='', def Closure folderCallback, def Closure projectCallback){
