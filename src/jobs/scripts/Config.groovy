@@ -6,7 +6,7 @@ class Config{
         processConfig(config, '', folderCallback, projectCallback)
     }
 
-    private void processConfig(def config, def parentFolder='', def Closure folderCallback, def Closure projectCallback){
+    private static void processConfig(def config, def parentFolder='', def Closure folderCallback, def Closure projectCallback){
         config.folders.each() {
             def fullName = "${parent}${it.name}"
             def folder = new Folder(fullName, it.securityGroups)
