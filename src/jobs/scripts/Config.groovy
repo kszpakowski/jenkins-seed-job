@@ -8,7 +8,7 @@ class Config{
         this.config = config
     }
 
-    public static void fromFile(String configFilePath){
+    public static Config fromFile(String configFilePath){
         def config = readYaml (file: configFilePath)
         return new Config(config)
     }
