@@ -13,7 +13,8 @@ pipeline {
         stage('Verify Jira Ticket') {
             steps {
                 script {
-                    echo "Checking jira ticket. Jira project: ${projectConf.jiraProject}"
+                    echo "Checking jira ticket. Jira project: ${projectConf.jiraProject}. Expected status: ${projectConf.expectedIssueStatus}"
+                    currentBuild.description="XXX-123"
                 }
             }
         }

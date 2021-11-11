@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     echo "Checking out.."
-                    
+                    currentBuild.description = "Verification of MR: ..."
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
                         echo "Running unit tests.."
                     }
                 }
-                stage("Static analysis") {
+                stage("Static analysis") { //static analysis can't run in parallel with tests, as it depends on test cov report
                     steps{
                         echo "Running static analysis.."
                     }
