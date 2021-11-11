@@ -11,4 +11,8 @@ class Project {
         this.name = name
         this.defaultBranch = defaultBranch ?: 'master'
     }
+
+    String fullName(){
+        "${parentFolder.name}/${name}"
+    }
 }
