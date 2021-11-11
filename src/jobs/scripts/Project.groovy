@@ -6,7 +6,7 @@ class Project {
     final String defaultBranch
     final String jiraProject
     final String expectedIssueStatus
-    final bool generateTestAutomationJobs
+    final Boolean generateTestAutomationJobs
 
 
     Project(Folder parentFolder, String name, String defaultBranch, String jiraProject, String expectedIssueStatus, bool generateTestAutomationJobs){
