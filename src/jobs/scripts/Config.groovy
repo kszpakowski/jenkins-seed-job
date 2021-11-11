@@ -2,18 +2,7 @@ package scripts
 
 class Config{
 
-    private final def config
-
-    private Config(def config){
-        this.config = config
-    }
-
-    public static Config fromFile(String configFilePath){
-        def config = readYaml (file: configFilePath)
-        return new Config(config)
-    }
-
-    public void process(def parentFolder='', def Closure folderCallback, def Closure projectCallback){
+    public void process(def config, def parentFolder='', def Closure folderCallback, def Closure projectCallback){
         config.folders.each() {
             def fullName = "${parent}${it.name}"
             def folder = new Folder(fullName, it.securityGroups)
