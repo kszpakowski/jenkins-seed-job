@@ -4,7 +4,7 @@ class Config{
 
     public static void process(def config, def parentFolder='', def Closure folderCallback, def Closure projectCallback){
         config.folders.each() {
-            def fullName = "${parent}${it.name}"
+            def fullName = "${parentFolder}${it.name}"
             def folder = new Folder(fullName, it.securityGroups)
             folderCallback(folder)
             if(it.folders){
