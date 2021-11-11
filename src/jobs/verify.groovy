@@ -18,13 +18,16 @@ pipeline {
             }
         }
         stage('Test and Analysis') {
-            parallel 'Unit Tests': {
+            parallel {
                 stage("Unit tests") {
-                    echo "Running unit tests.."
+                    steps{
+                        echo "Running unit tests.."
+                    }
                 }
-            }, 'Static Analysis': { 
                 stage("Static analysis") {
-                    echo "Running static analysis.."
+                    steps{
+                        echo "Running static analysis.."
+                    }
                 }
             }
 
