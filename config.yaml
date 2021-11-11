@@ -19,3 +19,4 @@ folders:
       jiraProject: config-management
       expectedIssueStatus: APPROVED
     - name: app-b-configuration
+      generateTestAutomationJobs: true
