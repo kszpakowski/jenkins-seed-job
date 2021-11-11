@@ -11,13 +11,15 @@ pipeline {
         stage('Process jobs') {
             steps {
                 script {
+                    def config = readYaml (file: 'config.yaml')
+                    
                     jobDsl targets: ['src/jobs/FolderConfiguration.groovy','src/jobs/**.groovy'].join('\n'),
                       removedJobAction: 'DELETE',
                       removedViewAction: 'DELETE',
                       removedConfigFilesAction: 'DELETE',
                       lookupStrategy: 'JENKINS_ROOT',
                       sandbox: true,
-                      additionalParameters: [:]
+                      additionalParameters: [config:config]
                 }
             }
         }
