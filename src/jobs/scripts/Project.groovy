@@ -9,7 +9,7 @@ class Project {
     final Boolean generateTestAutomationJobs
 
 
-    Project(Folder parentFolder, String name, String defaultBranch, String jiraProject, String expectedIssueStatus, bool generateTestAutomationJobs){
+    Project(Folder parentFolder, String name, String defaultBranch, String jiraProject, String expectedIssueStatus, Boolean generateTestAutomationJobs){
         this.parentFolder = parentFolder
         this.name = name
         this.defaultBranch = defaultBranch ?: 'master'
